@@ -13,9 +13,6 @@ public class LectorCsv {
     private BufferedReader lector; //lee el archivo csv
     private String linea; //recibe las lineas de cadas fila
     private List<String[]> datos = new ArrayList<>();
-    private int a = 3;
-    private int b = 3;
-    
     
     //Declaramos dos métodos
     public void leerArchivo(String nombreArchivo){
@@ -49,7 +46,7 @@ public class LectorCsv {
         if(datos.size() > 16 && datos.get(16).length > 8){
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("ingrese el mes de inicio de la comparacion");
+            System.out.println("ingrese el mes de inicio de la comparacion de las visualizaciones de YouTube");
             System.out.println("para enero ingrese [1]");
             System.out.println("para febrero ingrese [2]");
             System.out.println("para marzo ingrese [3]");
@@ -57,8 +54,7 @@ public class LectorCsv {
             System.out.println("para mayo ingrese [5]");
             System.out.println("para junio ingrese [6]");
             int primerMes = scanner.nextInt();
-            System.out.println(a);
-            System.out.println("ingrese el mes de fin de la comparacion");
+            System.out.println("ingrese el mes de fin de la comparacion de las visualizaciones de YouTube");
             System.out.println("para enero ingrese [1]");
             System.out.println("para febrero ingrese [2]");
             System.out.println("para marzo ingrese [3]");
@@ -68,7 +64,7 @@ public class LectorCsv {
             int segundoMes = scanner.nextInt();          
 
             double diferencia2 = Math.abs(Double.parseDouble(datos.get(16)[primerMes + 2]) - Double.parseDouble(datos.get(16)[segundoMes + 2]));
-            System.out.println("Diferencia de visualizaciones de Youtube entre enero y junio: " + diferencia2);
+            System.out.println("Diferencia de visualizaciones de Youtube entre los meses seleccionados: " + diferencia2);
         }
         //Para calcular el promedio de crecimiento entre los meses enero a junio de twitter y facebook
         if(datos.size() > 9 && datos.get(2).length > 8 && datos.get(9).length > 8){
